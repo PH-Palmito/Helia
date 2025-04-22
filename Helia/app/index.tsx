@@ -1,6 +1,6 @@
-import { Text, View, StyleSheet, TextInput,} from "react-native";
+import { Text, View, StyleSheet, TextInput, Pressable, Image,} from "react-native";
 import {StatusBar} from "expo-status-bar";
-import { Bookmark, ChatsTeardrop, MagnifyingGlass, SlidersHorizontal, TextIndent } from "phosphor-react-native";
+import { Bookmark, ChatsTeardrop, MagnifyingGlass, SlidersHorizontal, TextIndent, X } from "phosphor-react-native";
 import { BellRinging } from "phosphor-react-native";
 
 export default function Index() {
@@ -29,7 +29,21 @@ export default function Index() {
       <SlidersHorizontal size={30} color="#1ab65c"
       weight="duotone"/>
     </View>
-    
+    <View style={styles.content}>
+        <View style={styles.card}>
+          <Pressable style={styles.cardButton}>
+          <Image
+           style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
+           />
+
+          <View style={styles.cardinfo}>
+            <Text style={styles.cardTitle}>Hotel Nova Vista</Text>
+            <Text style={styles.cardSubTitle}>Salvador, Bahia</Text>
+          </View>
+          </Pressable>
+        </View>
+
+    </View>
   </View>
 
 
@@ -78,11 +92,52 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     gap: 10,
-    marginTop: 20,
+    marginBottom: 20,
 
   },
   input:{
     flex: 1,
     color: "#f4f4f4",
   },
+  content:{
+    width: "100%",
+    gap: 20,
+  },
+  card:{
+    width: "100%",
+    height: 120,
+    backgroundColor: "#1f222a",
+    borderRadius: 12,
+    paddingHorizontal: 20,
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 10,
+    justifyContent: "space-between",
+  },
+  cardButton:{
+    alignItems: "flex-start",
+    flexDirection: "row",
+    gap: 10,
+
+  },
+  cardImage:{
+    width: 90,
+    height: 90,
+    borderRadius: 12,
+  },
+  cardinfo:{
+    height: "100%",
+    gap: 10,
+  },
+  cardTitle:{
+    color: "#f4f4f4",
+    fontSize: 16,
+    fontWeight: "400",
+  },
+  cardSubTitle:{
+    color: "#f4f4f4",
+    fontSize: 14,
+    fontWeight: "300",
+  },
+
 });
