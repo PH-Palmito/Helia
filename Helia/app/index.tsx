@@ -41,14 +41,25 @@ export default function Index() {
             <Text style={styles.cardSubTitle}>Salvador, Bahia</Text>
           </View>
           </Pressable>
+
+          <View style={styles.cardInfoBuy}>
+            <Text style= {styles.cardInfoBuyText}> R$450,00 </Text>
+
+            <Bookmark size={30} color="#f4f4f4" weight="fill"/>
+
+          </View>
+
         </View>
 
     </View>
   </View>
 
 
+
   );
     }
+
+
 
 export const styles = StyleSheet.create({
   container: {
@@ -108,7 +119,8 @@ export const styles = StyleSheet.create({
     height: 120,
     backgroundColor: "#1f222a",
     borderRadius: 12,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
     alignItems: "center",
     flexDirection: "row",
     gap: 10,
@@ -139,5 +151,16 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "300",
   },
+  cardInfoBuy:{
+    height: "100%",
+    alignItens: "flex-end",
+    justfyContent: "space-between",
 
+
+  },
+  cardInfoBuyText:{
+  color:"#1ab65c",
+  fontSize: 10,
+  fontWeitgt: "900"
+  },
 });
