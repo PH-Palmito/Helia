@@ -1,8 +1,8 @@
 import {Text, View} from "react-native";
 
-export defaut function Booking(){
-    return( 
-    <View>   
+export default function Booking(){
+    return(
+    <View>
         <Text> Booking </Text>
     </View>
     );

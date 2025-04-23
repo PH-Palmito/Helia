@@ -153,14 +153,14 @@ export const styles = StyleSheet.create({
   },
   cardInfoBuy:{
     height: "100%",
-    alignItens: "flex-end",
-    justfyContent: "space-between",
+    alignItems: "flex-end",
+    justifyContent: "space-between",
 
 
   },
   cardInfoBuyText:{
   color:"#1ab65c",
   fontSize: 10,
-  fontWeitgt: "900"
+  fontWeight: "900",
   },
 });
