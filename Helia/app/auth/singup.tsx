@@ -1,8 +1,8 @@
 import { Text,View } from "react-native";
 
-    export default function index() {
+    export default function SingUp() {
         return <view>
-            <Text>index</Text>
+            <Text> SingUp</Text>
         </view>
 
 
