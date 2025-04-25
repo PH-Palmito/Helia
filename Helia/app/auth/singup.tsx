@@ -1,9 +1,10 @@
 import { Text,View } from "react-native";
 
     export default function SingUp() {
-        return <view>
+        return (
+        <view>
             <Text> SingUp</Text>
         </view>
 
-
+        );
     }
