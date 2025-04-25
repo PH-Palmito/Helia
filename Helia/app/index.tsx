@@ -1,7 +1,7 @@
 import { Text,View } from "react-native";
 import Login from "./auth/login";
 import { useEffect } from "react";
-import { useRouter } from "expo-router";
+import { router, useRouter } from "expo-router";
 
     export default function index() {
     const router = useRouter();
@@ -11,15 +11,13 @@ import { useRouter } from "expo-router";
                     const isloggedIm = false;
 
                     if (isloggedIm) {
-                        router.navigate("../tabs/index");
+                        router.navigate("../tabs/home");
                     } else{
                         return<Login/>
                     }
                 },1000)
-            },)
+                return() => clearTimeout(timeout);
+            }, [router]);
 
-        return(
-        <Login/>
-
-        );
+         return <Login/>
     }

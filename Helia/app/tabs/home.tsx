@@ -3,7 +3,7 @@ import {StatusBar} from "expo-status-bar";
 import { Bookmark, ChatsTeardrop, MagnifyingGlass, SlidersHorizontal, TextIndent, X } from "phosphor-react-native";
 import { BellRinging } from "phosphor-react-native";
 
-export default function Index() {
+export default function Home() {
   return (
   <View style={styles.container}>
       <StatusBar />
