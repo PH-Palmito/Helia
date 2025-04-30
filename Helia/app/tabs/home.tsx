@@ -2,8 +2,15 @@ import { Text, View, StyleSheet, TextInput, Pressable, Image,} from "react-nativ
 import {StatusBar} from "expo-status-bar";
 import { Bookmark, ChatsTeardrop, MagnifyingGlass, SlidersHorizontal, TextIndent, X } from "phosphor-react-native";
 import { BellRinging } from "phosphor-react-native";
+import { useRouter } from "expo-router";
 
 export default function Home() {
+      const router = useRouter();
+                function handleDetails(){
+
+            router.navigate("../stacks/details");
+        }
+
   return (
   <View style={styles.container}>
       <StatusBar />
@@ -31,7 +38,7 @@ export default function Home() {
     </View>
     <View style={styles.content}>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
            style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
            />

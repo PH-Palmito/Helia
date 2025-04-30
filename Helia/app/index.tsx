@@ -1,5 +1,5 @@
 import { Text,View } from "react-native";
-import Login from "./auth/login";
+import Login from "./stacks/login";
 import { useEffect } from "react";
 import { router, useRouter } from "expo-router";
 

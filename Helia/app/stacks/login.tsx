@@ -1,7 +1,16 @@
-import { ArrowLeft, EnvelopeSimple, LockKey } from "phosphor-react-native";
+import { AppleLogo, ArrowLeft, EnvelopeSimple, FacebookLogo, GoogleLogo, LockKey } from "phosphor-react-native";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { useRouter } from "expo-router";
+
 
     export default function Login() {
+        const router = useRouter();
+                function handleHome(){
+
+            router.navigate("../tabs/home");
+        }
+
+
         return(
         <View style={styles.container}>
         <TouchableOpacity style={styles.header}>
@@ -20,7 +29,7 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-nativ
                     <TextInput placeholder="Sua Senha" placeholderTextColor="#757575" style={styles.input}/>
                 </View>
             </View>
-            <TouchableOpacity style={styles.buttonSingIn} >
+            <TouchableOpacity onPress={handleHome} style={styles.buttonSingIn} >
                 <Text style={styles.buttonSingInText}>Entar</Text>
             </TouchableOpacity>
             <View style={styles.containerSeparator}>
@@ -28,6 +37,25 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-nativ
                 <Text style={styles.separatorText}>ou conecte-se com</Text>
                 <View style={styles.separator}></View>
             </View>
+
+            <View style={styles.footer}>
+            <TouchableOpacity style={styles.footerButton}>
+                <GoogleLogo size={40} color="#FFFFFF" weight="bold"/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.footerButton}>
+                <FacebookLogo size={40} color="#0B61F6" weight="bold"/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.footerButton}>
+                <AppleLogo size={40} color="#f4f4f4" weight="fill"/>
+            </TouchableOpacity>
+            </View>
+            <View style={styles.footer}>
+                <Text style={styles.footerText}>Ainda nao possui uma conta?</Text>
+                <TouchableOpacity>
+                    <Text style={styles.footerButtonText}>Cadastre-se</Text>
+                </TouchableOpacity>
+            </View>
+
         </View>
         );
     }
@@ -77,12 +105,16 @@ export const styles = StyleSheet.create({
         backgroundColor: "#1ab55c",
         width: "100%",
         height: 56,
-        borderRadius: 332,
+        borderRadius: 32,
         alignItems: "center",
         justifyContent: "center",
         marginTop: 40,
     },
-    buttonSingInText:{},
+    buttonSingInText:{
+        color: "#f4f4f4",
+        fontSize: 16,
+        fontWeight: "800",
+    },
     containerSeparator: {
         width: "100%",
         marginTop: 50,
@@ -100,5 +132,28 @@ export const styles = StyleSheet.create({
         color: "#f4f4f4",
         fontSize: 16,
         fontWeight: "400",
-    }
+    },
+    footer: {
+        marginTop: 50,
+        flexDirection: "row",
+        gap: 20,
+    },
+    footerButton: {
+        width: 100,
+        height: 60,
+        backgroundColor: "#1f222a",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 12,
+    },
+    footerText:{
+        color:"#f4f4f4",
+        fontSize: 16,
+        fontWeight: "400",
+    },
+    footerButtonText:{
+        color: "#1ab55c",
+        fontSize: 16,
+        fontWeight: "400",
+    },
 })

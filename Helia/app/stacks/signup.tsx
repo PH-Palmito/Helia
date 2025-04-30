@@ -1,9 +1,9 @@
 import { Text,View } from "react-native";
 
-    export default function SingUp() {
+    export default function SignUp() {
         return (
         <view>
-            <Text> SingUp</Text>
+            <Text> SignUp</Text>
         </view>
 
         );
