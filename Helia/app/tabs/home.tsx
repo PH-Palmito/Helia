@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TextInput, Pressable, Image,} from "react-native";
+import { Text, View, StyleSheet, TextInput, Pressable, Image, ScrollView,} from "react-native";
 import {StatusBar} from "expo-status-bar";
 import { Bookmark, ChatsTeardrop, MagnifyingGlass, SlidersHorizontal, TextIndent, X } from "phosphor-react-native";
 import { BellRinging } from "phosphor-react-native";
@@ -36,7 +36,7 @@ export default function Home() {
       <SlidersHorizontal size={30} color="#1ab65c"
       weight="duotone"/>
     </View>
-    <View style={styles.content}>
+    <ScrollView showsVerticalScrollIndicator={false} style={styles.content}>
         <View style={styles.card}>
           <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
@@ -58,7 +58,7 @@ export default function Home() {
 
         </View>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
            style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
            />
@@ -78,7 +78,7 @@ export default function Home() {
 
         </View>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
            style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
            />
@@ -98,7 +98,7 @@ export default function Home() {
 
         </View>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
            style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
            />
@@ -118,7 +118,7 @@ export default function Home() {
 
         </View>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
            style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
            />
@@ -138,7 +138,7 @@ export default function Home() {
 
         </View>
         <View style={styles.card}>
-          <Pressable style={styles.cardButton}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
           <Image
            style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
            />
@@ -157,9 +157,50 @@ export default function Home() {
           </View>
 
         </View>
+        <View style={styles.card}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
+          <Image
+           style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
+           />
+
+          <View style={styles.cardinfo}>
+            <Text style={styles.cardTitle}>Hotel Nova Vista</Text>
+            <Text style={styles.cardSubTitle}>Salvador, Bahia</Text>
+          </View>
+          </Pressable>
+
+          <View style={styles.cardInfoBuy}>
+            <Text style= {styles.cardInfoBuyText}> R$450,00 </Text>
+
+            <Bookmark size={30} color="#f4f4f4" weight="fill"/>
+
+          </View>
+
+        </View>
+        <View style={styles.card}>
+          <Pressable onPress={handleDetails} style={styles.cardButton}>
+          <Image
+           style={styles.cardImage} source = {require("../assets/images/hotel.jpg")}
+           />
+
+          <View style={styles.cardinfo}>
+            <Text style={styles.cardTitle}>Hotel Nova Vista</Text>
+            <Text style={styles.cardSubTitle}>Salvador, Bahia</Text>
+          </View>
+          </Pressable>
+
+          <View style={styles.cardInfoBuy}>
+            <Text style= {styles.cardInfoBuyText}> R$450,00 </Text>
+
+            <Bookmark size={30} color="#f4f4f4" weight="fill"/>
+
+          </View>
+r
+        </View>
 
 
-    </View>
+
+    </ScrollView>
   </View>
 
 
@@ -232,7 +273,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 15,
     alignItems: "center",
     flexDirection: "row",
-    gap: 10,
+    marginBottom: 20,
     justifyContent: "space-between",
   },
   cardButton:{
